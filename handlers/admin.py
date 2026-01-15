@@ -12,7 +12,7 @@ admin_router = Router()
 # Filter for admin
 class IsAdmin(BaseFilter):
     async def __call__(self, message: Message) -> bool:
-        return message.from_user.id == config.ADMIN_ID
+        return message.from_user.id in config.ADMIN_IDS
 
 # Admin States
 class AdminStates(StatesGroup):
